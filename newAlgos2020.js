@@ -100,19 +100,43 @@
 // //  4
 
 // Complete the alternatingCharacters function below.
-function alternatingCharacters(s) {
-  let result = s.split("");
-  console.log(result);
-  let len = result.length;
-  let i = 0;
-  let j = 1;
-  for(i;i<len;i++){
-    for(j;j<len;j++) {
-      if(result[i] === result[j]) {
-        result.splice(result[j],1);
-        return result;
+// function alternatingCharacters(s) {
+//   let result = s.split("");
+//   console.log(result);
+//   let len = result.length;
+//   let i = 0;
+//   let j = 1;
+//   for(i;i<len;i++){
+//     for(j;j<len;j++) {
+//       if(result[i] === result[j]) {
+//         result.splice(result[j],1);
+//         return result;
+//       }
+//     }
+//   }
+// }
+// console.log(alternatingCharacters("ABBABBAA"));
+
+// const reducer = (accumulator, currentValue) => accumulator + currentValue;
+
+// const doubleNumbers = (n) => n.reduce(reducer);
+
+// const nums = [1,2,3];
+// console.log(doubleNumbers(nums));
+// //result=[2,4,6]
+
+function mystery(arr){
+  var temp = 0;
+  for(var i=1; i<arr.length; i++){
+      if(arr[i] < arr[temp]){
+          temp = i;
       }
-    }
   }
+  var result = arr[temp];
+  for(temp; temp<arr.length-1; temp++){
+      arr[temp] = arr[temp+1];
+  }
+  arr.pop();
+  return result;
 }
-console.log(alternatingCharacters("ABBABBAA"));
+console.log("xx", mystery([15,7,3,2,4,10]));
