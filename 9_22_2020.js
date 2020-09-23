@@ -21,3 +21,22 @@
 //   return result;
 // };
 // console.log(shiftLeft([1,2,3,4,5]));
+
+// /**
+//  * @param {string} s
+//  * @return {boolean}
+//  */
+// const isValid = (s) => {
+//   const valid = {
+//     0:'()',
+//     1:'[]',
+//     2:'{}'
+//   };
+//   const result = s;
+//   if(result.includes(valid[1])) {
+//     return true;
+//   }
+//   return false;
+// };
+// console.log(isValid('[]'));
+
