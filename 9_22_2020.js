@@ -78,4 +78,4 @@
 const maskify = (card) => {
   return card.replace(/.(?=.{4,}$)/g, '#');
 };
-console.log(maskify('1234567891234567'));
+console.log(maskify('12345675684563462'));
