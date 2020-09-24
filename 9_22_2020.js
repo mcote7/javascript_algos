@@ -44,9 +44,33 @@
 //  * @param {number[]} nums
 //  * @return {number}
 //  */
-const majorityElement = (nums) => {
-  nums.sort((a,b) => a - b);
-  return nums[Math.floor(nums.length/2)];
+// const majorityElement = (nums) => {
+//   nums.sort((a,b) => a - b);
+//   return nums[Math.floor(nums.length/2)];
+// };
+// console.log(majorityElement([2,3,3,4]))
+// //2
+
+// const maskify = (cc) => {
+//   const result = cc;
+//   result.substr(result.length - 4);
+//   console.log('sub', result);
+//   result.concat('####');
+//   return result;
+// };
+// console.log(maskify('122333445667890'));
+
+const maskify = (card) => {
+  let newString = '';
+  if(card.length > 4) {
+    for(let i = 0; i < card.length - 4; i++) {
+      newString += '#';
+    }
+    for(let j = card.length - 4; j < card.length; j++) {
+      newString += card[j];
+    }
+    return newString;
+  }
+  return card;
 };
-console.log(majorityElement([2,3,3,4]))
-//2
+console.log(maskify('1234567891234567'));
