@@ -60,17 +60,22 @@
 // };
 // console.log(maskify('122333445667890'));
 
+// const maskify = (card) => {
+//   let newString = '';
+//   if(card.length > 4) {
+//     for(let i = 0; i < card.length - 4; i++) {
+//       newString += '#';
+//     }
+//     for(let j = card.length - 4; j < card.length; j++) {
+//       newString += card[j];
+//     }
+//     return newString;
+//   }
+//   return card;
+// };
+// console.log(maskify('1234567891234567'));
+
 const maskify = (card) => {
-  let newString = '';
-  if(card.length > 4) {
-    for(let i = 0; i < card.length - 4; i++) {
-      newString += '#';
-    }
-    for(let j = card.length - 4; j < card.length; j++) {
-      newString += card[j];
-    }
-    return newString;
-  }
-  return card;
+  return card.replace(/.(?=.{4,}$)/g, '#');
 };
 console.log(maskify('1234567891234567'));
