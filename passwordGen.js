@@ -6,17 +6,27 @@ const VALID_CHARACTERS = [
 const NEW_PASSWAORD_LENGTH = 16;
 
 const generateNewPassword = (characters, passwordLen) => {
+
+  const getRandom = (param) => {
+    return Math.floor(Math.random()*param);
+  };
+
   let newPassword = "";
   const charactersLen = characters.length;
+
   for(let i = 0; i < passwordLen; i++) {
-    let random_1st = Math.floor(Math.random()*charactersLen);
+
+    let random_1st = getRandom(charactersLen);
     let subChars = characters[random_1st];
+
     if(characters.indexOf(subChars) === 3) {
-      subChars = characters[Math.floor(Math.random()*charactersLen)];
+      subChars = characters[getRandom(charactersLen)];
     }
-    let random_2nd = Math.floor(Math.random()*subChars.length);
+
+    let random_2nd = getRandom(subChars.length);
     newPassword += subChars[random_2nd];
   }
+
   return newPassword;
 };
 
