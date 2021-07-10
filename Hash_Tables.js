@@ -38,7 +38,7 @@ class HashTable {
     const keysArray = [];
     console.log(this.data.length);
     for (let i = 0; i < this.data.length; i++){
-      if(this.data[i]){
+     if(this.data[i]){
         keysArray.push(this.data[i][0][0])
       }
     }
@@ -47,9 +47,36 @@ class HashTable {
 }
 
 const myHashTable = new HashTable(50);
-myHashTable.set('grapes', 10000)
-myHashTable.set('grapes', 10000)
-myHashTable.get('grapes')
-myHashTable.set('apples', 9)
-myHashTable.get('apples')
-myHashTable.keys()
+// myHashTable.set('grapes', 10000)
+// myHashTable.set('grapes', 10000)
+// myHashTable.get('grapes')
+// myHashTable.set('apples', 9)
+// myHashTable.get('apples')
+// myHashTable.keys()
+
+// const findRecuringVal = (arr) => {
+//   for(let i = 0; i < arr.length; i++) {
+//     for(let j = i + 1; j < arr.length; j++) {
+//       if(arr[i] === arr[j]) {
+//         return arr[i];
+//       }
+//     }
+//   }
+// };
+
+
+const findRecuringValHash = (arr) => {
+  let map = {};
+  for(let i = 0; i < arr.length; i++) {
+    if(map[arr[i]] !== undefined) {
+      return arr[i];
+    } else {
+      map[arr[i]] = i;
+    }
+    console.log("map :::", map);
+  }
+};
+
+console.log(findRecuringValHash([2,4,4,2,3,4,2,2]));
+
+
