@@ -147,3 +147,9 @@
 //   ]
 // ]))
 
+let a = 5;
+let x = a;
+let b = x++;
+let c = ++x;
+
+console.log("a:", a,"b:", b,"c:", c, )
